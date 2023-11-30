@@ -1,47 +1,33 @@
 import { Plugin } from "obsidian";
-import { DEFAULT_SETTINGS, MyPluginSettings } from "./types";
-import { confirm } from "./modal";
-import {
-	initializeI18next,
-	t,
-	translationLanguage,
-	translations,
-} from "./i18n/i18next";
-import { debug, log } from "./logs";
+import { DEFAULT_SETTINGS, ESMSettings } from "./types";
+import { EmojiSelModal } from "./modal";
+import { ESMTab } from "./settings";
 
-export default class MyPlugin extends Plugin {
-	settings: MyPluginSettings;
+export default class EmojiSelMenu extends Plugin {
+	settings: ESMSettings;
+	ribbonIconEl: HTMLElement|null
 
 	async onload() {
-		// i18
-		initializeI18next(translationLanguage, translations);
-
-		debug("result: ", t("secret") as string);
-
-		// log
-		const variable = 2;
-		log({ variable }, "tututut"); // variable: 2
-		// tututut
-		debug({ variable }, "tututut");
-
 		await this.loadSettings();
+		this.addSettingTab(new ESMTab(this.app, this));
+		this.addCommand({
+			id: "emoji-selection-menu",
+			name: "Emoji selection menu",
+			icon: "smile-plus",
+			editorCallback: (editor) => {
+				new EmojiSelModal(this.app, this).open();
+			},
+		});
 
-		// this.addSettingTab(new SampleSettingTab(this.app, this));
+		this.ribbonIconHandler()
 
-		// const ribbonIconEl = this.addRibbonIcon('dice', 'Sample Plugin', (evt: MouseEvent) => {
-		// 	new SampleModal(this.app).open();
-		// });
+	}
 
-		const ribbonIconEl = this.addRibbonIcon(
-			"aperture",
-			"Sample Plugin",
-			async (evt: MouseEvent) => {
-				const confirmed = await confirm("are you sure ?", 200);
-				if (confirmed) {
-					log("confirmed");
-				} else log("nop");
-			}
-		);
+	ribbonIconHandler() {
+		this.ribbonIconEl = this.addRibbonIcon('smile-plus', 'Open emoji menu', (evt: MouseEvent) => {
+			new EmojiSelModal(this.app, this).open();
+		});
+		
 	}
 
 	async loadSettings() {

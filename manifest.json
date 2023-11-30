@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin-modif",
-	"name": "Sample Plugin modif",
+	"id": "emoji-selection-menu",
+	"name": "Emoji selection menu",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "sample plugin modif.",
-	"author": "Obsidian",
+	"description": "Insert emojis from modal menu.",
+	"author": "1C0D",
 	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
 	"isDesktopOnly": false
 }
