@@ -1,3 +1,5 @@
+// TODO: add sections to modal. add date. ctrl+alt emoji at start date at end?
+
 import { Plugin } from "obsidian";
 import { DEFAULT_SETTINGS, ESMSettings } from "./types";
 import { EmojiSelModal } from "./modal";
@@ -12,7 +14,7 @@ export default class EmojiSelMenu extends Plugin {
 		this.addSettingTab(new ESMTab(this.app, this));
 		this.addCommand({
 			id: "emoji-selection-menu",
-			name: "Emoji selection menu",
+			name: "Open Modal",
 			icon: "smile-plus",
 			editorCallback: (editor) => {
 				new EmojiSelModal(this.app, this).open();

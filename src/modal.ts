@@ -37,7 +37,6 @@ export class EmojiSelModal extends Modal {
 				.setTooltip(emojiItem.desc)
 				.onClick((evt: MouseEvent) => {
 					if (evt.ctrlKey || evt.metaKey) {
-						console.log("ctrl")
 						this.atStart(emojiItem.emoji);
 					} else if (evt.altKey) {
 						this.atEnd(emojiItem.emoji);
