@@ -12,26 +12,26 @@
 
 to enter in settings emoji in the text area:
   
---- emoji status → to indicate a cession
-✍️ todo
-✔️ completed
-🚥 in progress
-🚦 Pending
-🔜 Upcoming
-➡️ Next step
-📅 Scheduled
---- emoji state
-👍 ok
-🚀 Good to Go
-💖 super ok
-👀 to see
-💡 idea
-🎨 Creative task
-🛠️ Maintenance
-🎯 Objectif
-❗ important
-🔧 tools
-⚙️ option/param
+--- emoji status → to indicate a cession  
+✍️ todo  
+✔️ completed  
+🚥 in progress  
+🚦 Pending  
+🔜 Upcoming  
+➡️ Next step  
+📅 Scheduled  
+--- emoji state  
+👍 ok  
+🚀 Good to Go  
+💖 super ok  
+👀 to see  
+💡 idea  
+🎨 Creative task  
+🛠️ Maintenance  
+🎯 Objectif  
+❗ important  
+🔧 tools  
+⚙️ option/param  
 
 
 result:
