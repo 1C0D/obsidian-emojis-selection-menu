@@ -35,5 +35,5 @@ to enter in settings emoji in the text area:
 
 
 result:
-
-+ ![example](./ressources/ex%20menu.png)
+  
+![example](./ressources/ex%20menu.png)
