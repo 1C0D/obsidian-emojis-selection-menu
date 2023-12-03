@@ -17,20 +17,24 @@ export class EmojiSelModal extends Modal {
 		contentEl.empty();
 
 		new Setting(contentEl).addButton((button) => {
-			button.setButtonText("⚙️").setTooltip("open plugin settings").onClick(async(evt: MouseEvent) => {
+			button.setButtonText("⚙️").setTooltip("open plugin settings").onClick(async (evt: MouseEvent) => {
 				const id = this.plugin.manifest.id
 				//@ts-ignore
-				this.app.setting.openTabById(
+				await this.app.setting.openTabById(
 					id
 				);
-				await(this.app as any).setting.open();
+				await (this.app as any).setting.open();
 			})
 		}).setName("Insert:").setDesc("at cursor →  click,  at start →  ctrl+click, at end line → alt+click").setClass("esm-settings-button")
 
 		const myEmojis = settings.myEmojis;
 		const emojis = contentEl.createEl("div", { cls: "esm-emojis-container" });
-		const setting = new Setting(contentEl)
+		new Setting(contentEl)
 		for (const emojiItem of myEmojis) {
+			if (emojiItem.emoji === "---") {
+				new Setting(emojis).setName(emojiItem.desc)
+				continue
+			}
 			new ButtonComponent(emojis)
 				.setButtonText(emojiItem.emoji)
 				.setClass("esm-emojis-container-button")
@@ -100,8 +104,8 @@ export class EmojiSelModal extends Modal {
 		else if (match) {
 			const startCh = match[0].indexOf(match[2]);
 			return startCh;
-		} 
-		 else {
+		}
+		else {
 			return 0;
 		}
 	}

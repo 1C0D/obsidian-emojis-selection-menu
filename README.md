@@ -8,4 +8,32 @@
 
 - settings: 
     - show icon ribbon or not
-    - set in the text area, your own emojis and tooltip (description)
+    - set in the text area, your own emojis and description (tooltip)
+
+to enter in settings emoji in the text area:
+  
+--- emoji status → to indicate a cession
+✍️ todo
+✔️ completed
+🚥 in progress
+🚦 Pending
+🔜 Upcoming
+➡️ Next step
+📅 Scheduled
+--- emoji state
+👍 ok
+🚀 Good to Go
+💖 super ok
+👀 to see
+💡 idea
+🎨 Creative task
+🛠️ Maintenance
+🎯 Objectif
+❗ important
+🔧 tools
+⚙️ option/param
+
+
+result:
+
++ ![example](./ressources/ex%20menu.png)

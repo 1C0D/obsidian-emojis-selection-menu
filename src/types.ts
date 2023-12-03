@@ -10,7 +10,7 @@ export interface ESMSettings {
 }
 
 export const DEFAULT_SETTINGS: ESMSettings = {
-    enableRibbonIcon:true,
+    enableRibbonIcon: true,
     myEmojis: [
         {
             emoji: "✍️",
@@ -39,6 +39,10 @@ export const DEFAULT_SETTINGS: ESMSettings = {
         {
             emoji: "📅",
             desc: "Scheduled"
+        }, 
+        {
+            emoji: "---",
+            desc: "Appreciation Emojis"
         },
         {
             emoji: "👍",
